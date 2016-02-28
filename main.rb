@@ -1,6 +1,6 @@
 class Developer
   MAX_TASKS = 10
-
+  attr_accessor :name, :tasks_list
   def initialize (name)
     @name = name
     @tasks_list = []
@@ -36,7 +36,10 @@ class Developer
   def can_work?
     return false if @tasks_list.empty?
     true
-  end  
+  end
+  def developer_type
+    :developer
+  end
 
 end
 
@@ -54,6 +57,10 @@ class JuniorDeveloper < Developer
     @tasks_list.shift
   end
 
+  def developer_type
+    :junior
+  end
+
 end
 
 class SeniorDeveloper < Developer
@@ -63,4 +70,9 @@ class SeniorDeveloper < Developer
     return puts "Что-то лень" if rand(2).zero?
     2.times { super }
   end
+
+  def developer_type
+    :senior
+  end
+
 end
