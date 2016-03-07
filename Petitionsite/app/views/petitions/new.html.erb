@@ -1,0 +1,10 @@
+<h1> Создание новой петиции</h1>
+
+<%= form_for Petition.new do |f| %>
+
+    <p> Название петиции: <br><%= f.text_field :name %>
+    <p> Описание: <br><%= f.text_area :description %>
+
+  <p><%= f.submit "Создать петицию" %></p>
+
+<% end %>
