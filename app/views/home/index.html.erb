@@ -1,0 +1,13 @@
+<h2>Последние петиции</h2>
+
+<table class="table">
+  <thead>
+  <tr>
+    <th>Петиция</th>
+    <th>Автор</th>
+  </tr>
+  </thead>
+  <% @petitions.each do |petition| %>
+    <%= render 'petitions/petition', petition: petition %>
+  <% end %>
+</table>

@@ -1,0 +1,9 @@
+<h2>Петиция</h2>
+
+<h3><%= @petition.title %></h3>
+
+<p>
+  <%= @petition.description %>
+</p>
+
+<td><%= button_to 'Проголосовать', upvote_petition_path(@petition), method: :post %></td>

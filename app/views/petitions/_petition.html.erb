@@ -1,0 +1,11 @@
+<tr>
+  <td><%= link_to petition.title, petition_path(petition) %></td>
+  <% unless params[:my] %>
+    <td><%= petition.user.name %></td>
+  <% end %>
+  <td><%= petition.votes.count %></td>
+  <% if params[:my] %>
+    <td><%= link_to "Изменить", edit_petition_path(petition) %></td>
+    <td><%= link_to "Удалить", petition, method: :delete %></td>
+  <% end %>
+</tr>

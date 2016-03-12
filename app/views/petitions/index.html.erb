@@ -1,0 +1,19 @@
+<h2><%= params[:my] ? 'Мои' : 'Все' %> петиции</h2>
+
+<table class="table">
+  <thead>
+  <tr>
+    <th>Петиция</th>
+    <% unless params[:my] %>
+      <th>Автор</th>
+    <% end %>
+    <th>Голоса</th>
+    <% if params[:my] %>
+      <th colspan="2" style="text-align: center; width: 10%">Действия</th>
+    <% end %>
+  </tr>
+  </thead>
+  <% @petitions.each do |petition| %>
+    <%= render 'petition', petition: petition %>
+  <% end %>
+</table>
